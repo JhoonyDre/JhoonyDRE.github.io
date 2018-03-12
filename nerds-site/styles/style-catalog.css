@@ -408,6 +408,7 @@ input[type="checkbox"]:checked + label {
 
 .row-controls {
     margin-left: auto;
+    cursor: pointer;
 }
 
 .row-up {
@@ -542,6 +543,14 @@ input[type="checkbox"]:checked + label {
     margin-top: 10px;
 }
 
+.catalog-item__button:hover {
+    background-color: #e74246;
+}
+
+.catalog-item__button:active span {
+    opacity: 0.3;
+}
+
 
 /********* выплывающий блок конец  ************/
 
@@ -554,6 +563,7 @@ input[type="checkbox"]:checked + label {
     line-height: 18px;
     font-weight: 700;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .next-button {
@@ -565,6 +575,7 @@ input[type="checkbox"]:checked + label {
     line-height: 18px;
     font-weight: 700;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .buttons-options {
