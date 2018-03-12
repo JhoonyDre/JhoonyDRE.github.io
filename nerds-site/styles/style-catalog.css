@@ -1,0 +1,935 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: auto;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    /*правило*/
+    height: auto;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+/******ШАПКА******/
+
+header {
+    background-color: #eeeeee;
+    min-height: 355px;
+    margin-bottom: 57px;
+}
+
+.header-logo img {
+    margin-top: 49px;
+    cursor: pointer;
+
+}
+
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    width: 1160px;
+    /*Ширина всего контента на странице*/
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.main-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 75px;
+    width: 440px;
+    margin-left: 200px;
+}
+
+.nav-header a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    transition: all .5s;
+}
+
+
+.score .active span {
+    display: inline-block;
+    border-bottom: 2px solid #fb565a;
+    margin-bottom: 8px;
+}
+
+.user-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 75px;
+    max-width: 160px;
+    margin-left: auto;
+}
+
+.user-navigation .basket-link {
+    padding-left: 50px;
+    position: relative;
+}
+
+.basket-link::before {
+    /*Псевдоэлемент ДО*абсолютное позиционирование для отрисовки элемента*/
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    left: 25px;
+    top: 6px;
+    background-image: url(../svg-nerds/cart-icon.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.basket-link:hover,
+.basket-link:focus {
+    opacity: 1;
+}
+
+.basket-link:active {
+    opacity: 1;
+}
+
+
+.header-logo:hover,
+.header-logo:focus {
+    opacity: 0.6;
+    transition: all .5s;
+}
+
+.header-logo:active {
+    opacity: 0.3;
+    transition: all .5s;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    color: #fb565a;
+}
+
+.main-navigation a:active {
+    opacity: 0.3;
+}
+
+.user-navigation a:hover,
+.user-navigation a:focus {
+    color: #fb565a;
+}
+
+.user-navigation a:active {
+    opacity: 0.3;
+}
+
+.title-catalog {
+    font-size: 55px;
+    line-height: 55px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 75px
+}
+
+/*********Конец шапки****************************/
+
+/*********Основной контент***************************/
+
+.main-catalog-contanier {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.value-catalog h2,
+.grid-catalog h2,
+.features-catalog h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.value-catalog h2 {
+    margin-bottom: 50px;
+}
+
+.grid-catalog h2 {
+    margin-bottom: 17px;
+}
+
+.features-catalog h2 {
+    margin-bottom: 17px;
+}
+
+.grid-catalog-radio {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-catalog-radio label {
+    /*внутри Ul для label задаем кнопкам дисплей блок, фикс размер, позиционировние относительное,что бы надпись не налазила на фон.*/
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url("../svg-ps/radio-off1.svg.png") no-repeat;
+    background-size: cover;
+    margin-bottom: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    /*Прячем кнопки*/
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    /*задаем для выбраного элемента свой фон*/
+    background: url("../svg-ps/radio-on.png") no-repeat;
+    background-size: contain;
+}
+
+.grid-catalog-radio label:hover {
+    background: url(../svg-ps/radio-off.png);
+}
+
+.text {
+    font-family: 'Comfortaa', cursive;
+    position: absolute;
+    left: 35px;
+    font-size: 14px;
+    line-height: 22px;
+    top: 2px;
+    white-space: nowrap;
+    /*пробелы не учитываются, перенос игнорируется*/
+}
+
+.grid-catalog-checkbox {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-catalog-checkbox label {
+    display: inline-block;
+    background: url("../svg-ps/checkbox-off.png") no-repeat;
+    background-size: contain;
+    margin-bottom: 16px;
+    position: relative;
+    width: 27px;
+    height: 23px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + label {
+    background: url(../svg-nerds/checkbox-on.svg) no-repeat;
+    background-size: cover;
+}
+
+.grid-catalog-checkbox label:hover {
+    background: url("../svg-ps/checkbox-off1.png") no-repeat;
+}
+
+.show {
+    display: block;
+    border: none;
+    background: #eeeeee;
+    width: 260px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-top: 34px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.show:hover,
+.show:focus {
+    background-color: #dfdfdf;
+}
+
+.show:active span {
+    opacity: 0.3;
+}
+
+.form-option {
+    box-sizing: border-box;
+}
+
+/********************Фильтр выбора цены*******************/
+
+.range-filter {
+    width: 260px;
+    margin-bottom: 55px;
+}
+
+.range-controls {
+    position: relative;
+    height: 41px;
+    padding-top: 39px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #f1f1f1;
+}
+
+.range-controls .scale {
+    height: 2px;
+    background: #d7dcde;
+}
+
+.range-controls .bar {
+    width: 70%;
+    height: 2px;
+    background: #00ca74;
+}
+
+.range-controls .toggle {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    background: #ababab;
+    box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.range-controls .toggle-min {
+    left: 50px;
+}
+
+.range-controls .toggle-max {
+    left: 170px;
+}
+
+.price-controls {
+    font-size: 0;
+}
+
+.price-controls label {
+    font-size: 16px;
+    display: inline-block;
+    width: 50%;
+}
+
+.max-price {
+    text-align: right;
+}
+
+.price-controls input {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    width: 60px;
+    margin-left: 10px;
+    padding: 8px 10px;
+    text-align: center;
+    color: #283136;
+    border: none;
+    border-radius: 5px;
+    background: #f1f1f1;
+}
+
+/***************************************************/
+
+.sort {
+    display: flex;
+    width: 760px;
+    margin-bottom: 50px;
+}
+
+.sort h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.sort-option {
+    display: flex;
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    margin-left: 294px;
+}
+
+.sort-option a {
+    color: #000000;
+    font-size: 16px;
+    line-height: 16px;
+    opacity: 0.3;
+    font-family: 'Comfortaa', cursive;
+}
+
+.sort-option a:hover {
+    opacity: 0.6;
+}
+
+.sort-option a:active {
+    opacity: 1;
+}
+
+.sort-option .active {
+    opacity: 1;
+}
+
+.row-controls {
+    margin-left: auto;
+}
+
+.row-up {
+    padding-left: 15px;
+}
+
+.row-controls svg {
+    fill-opacity: 0.2;
+}
+
+.row-controls svg:hover {
+    fill-opacity: 0.6;
+}
+
+.row-controls svg:active {
+    fill-opacity: 1;
+}
+
+.active-svg {
+    fill-opacity: 1;
+}
+
+.all-container {
+    /*задал дополнительную обертку, что бы разместить элементы в одном контейнрее*/
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.all-sites {
+    width: 760px;
+
+}
+
+.catalog-items-sites {
+    width: 360px;
+    min-height: 576;
+    margin-bottom: 33px;
+}
+
+.sites {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.item-img-wrapper {
+    height: 616px;
+    overflow: hidden;
+    background-color: #e9e9e9;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+
+.item-header-img {   /*задал бокс сайз,что бы не вылазил за пределы. высоту, ширина уже была задана врапером, отступы*/
+    box-sizing: border-box;
+    position: relative;
+    height: 40px;
+    font-size: 0;
+    padding-left: 12px;
+    padding-top: 10px;
+}
+
+.item-header-img span { /*спан сделал строчно-блочный, задал цвет и формы, отсупы.*/
+    display: inline-block;
+    background-color: #ffffff;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 7px;
+    margin-top: 3px;
+}
+
+.catalog-items-sites:hover .item-img-wrapper { /*чтобы ховер сработал, нужно задать ховер родителю блока*/
+    background-color: #4d4d4d;
+     -webkit-transition: all .8s;
+    -o-transition: all .8s;
+    transition: all .8s;
+}
+
+
+
+/***** выплывающий блок *********/
+
+.catalog-items-sites {
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-item--hover {
+    position: absolute;
+    bottom: -600px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 0 40px;
+    background-color: #ECEFEE;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    opacity: 0;
+}
+
+.catalog-items-sites:hover .catalog-item--hover {
+    bottom: 0;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    opacity: 1;
+}
+
+.catalog-item__title {
+    text-transform: uppercase;
+}
+
+.catalog-item__description {
+    color: #7C7576;
+    padding: 0 30px;
+}
+
+.catalog-item__button {
+    display: inline-block;
+    background-color: #FF5560;
+    color: #fff;
+    padding: 15px 50px;
+    margin-top: 10px;
+}
+
+
+/********* выплывающий блок конец  ************/
+
+.number-button {
+    width: 50px;
+    height: 50px;
+    background-color: #eeeeee;
+    border: none;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.next-button {
+    width: 260px;
+    height: 50px;
+    background-color: #eeeeee;
+    border: none;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.buttons-options {
+    display: flex;
+    width: 444px;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.number-button:hover,
+.number-button:focus {
+    background: #dfdfdf;
+}
+
+.number-button:active span {
+    opacity: 0.3;
+}
+
+.active-btn {
+    background: #ffffff;
+    border: 3px solid #eeeeee;
+}
+
+.next-button:hover,
+.next-button:focus {
+    background: #dfdfdf;
+}
+
+.next-button:active span {
+    opacity: 0.3;
+}
+ 
+.write-us {
+    width: 318px;
+    height: 307px;
+    text-align: center;
+    border: 1px solid transparent;
+    position: absolute;
+    bottom: -2320px;
+    background-color: #ffffff;
+    margin-left: 120px;
+}
+
+
+.btn-write-us {
+    display: block;
+    margin: 0 auto;
+    width: 219px;
+    font-size: 16px;
+    line-height: 18px;
+    display: block;
+    text-align: center;
+    background-color: #fb565a;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+
+.btn-write-us:hover,
+.btn-write-us:focus {
+    background-color: #e74246;
+}
+
+.btn-write-us:active span {
+
+    opacity: 0.3;
+}
+.title-contacts {
+    margin: 0;
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.adress-contacts {
+    margin: 0;
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 10px;
+}
+
+.telephone-contacts {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 33px;
+}
+
+/**********Конец***Основного контент*******************/
+
+/*************************popap************************/
+
+.modal {
+    background-color: #ffffff;
+    position: fixed;
+    color: #000000;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+
+
+}
+
+.modal-login {
+    top: 20px;
+    left: 50%;
+    width: 763px;
+    margin-left: -480px;
+    padding-top: 60px;
+    padding-bottom: 85px;
+    padding-left: 90px;
+    padding-right: 110px;
+	visibility: hidden;
+    z-index: 1001;
+
+}
+.modal-up {
+	animation-name: bounceUp;
+	animation-duration: 0.9s;
+	visibility: hidden; 
+}
+.modal-close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    font-size: 0;
+    top: 75px;
+    right: 90px;
+    background-color: #ffffff;
+    border: 0;
+    cursor: pointer;
+    outline: none;	
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: "";
+
+    position: absolute;
+    left: -1px;
+    top: 9px;
+    width: 22px;
+    height: 3px;
+    background-color: #fecccd;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+.modal-close:hover::before,
+.modal-close:hover::after {
+    background-color: #fb565a;
+}
+
+.modal-close:active::before,
+.modal-close:active::after {
+    background-color: #ffeeee;
+}
+
+.btn-send {
+    width: 260px;
+    border: 0;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #fb565a;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+.modal-login h3 {
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.input-size {
+    width: 360px;
+    height: 50px;
+}
+
+.big-input-size {
+    width: 760px;
+    height: 118px;
+    margin-bottom: 50px;
+}
+
+.info-form-label_block {
+    display: block;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.info-form-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.text-input-user-top {
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 200;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width: 360px;
+    border: 2px solid #dfdfdf;
+    border-radius: 3px;
+}
+
+.text-input-user-top:hover {
+    border: 2px solid #b4b9bb;
+}
+
+.text-input-user-top:focus {
+    border: 2px solid #000000;
+}
+
+.text-input-user-bottom {
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 200;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 2px solid #dfdfdf;
+    border-radius: 3px;
+    width: 760px;
+    resize: none;
+    /*что бы убрать стрелочку снизу*/
+}
+
+.text-input-user-bottom:hover {
+    border: 2px solid #b4b9bb;
+}
+
+.text-input-user-bottom:focus {
+    border: 2px solid #000000;
+}
+
+
+.modal-show {
+    visibility: visible;
+    animation-name: bounce;
+    animation-duration: 0.9s;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-1000px);}
+    70% { transform: translateY(30px);}
+    90% { transform: translateY(-10px);}
+    100% { transform: translateY(0px);}
+}
+
+@keyframes bounceUp {
+	0% { 	visibility:visible;transform: translateY(0px);}
+	10% { 	visibility:visible;transform: translateY(-10px);}
+	30% { 	visibility:visible;transform: translateY(30px);}
+    100% {	visibility:visible;transform: translateY(-1000px);}
+   
+}
+
+
+.modal-error {
+   animation: shake .6s; 
+}
+
+@keyframes shake {
+0%, 100% { transform: translateX(0); } 
+10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+
+
+/***************Podval***************/
+
+.main-footer {
+    min-height: 218px;
+}
+
+.social ul {
+    /*Флекс для того, что бы выставить все в строку*/
+    list-style-type: none;
+    display: flex;
+    width: 260px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+}
+
+
+.social-button {
+    /*Флекс для того, что бы выравнить svg по цетру*/
+    width: 78px;
+    height: 78px;
+    background-color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background-color: #e74246;
+}
+
+.social-button:active svg {
+    opacity: 0.3;
+    transition: all .5s;
+
+}
+
+.social {
+    display: flex;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 140px;
+}
+
+.footer-text h3 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 36px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 70px;
+}
+
+.footer-text p {
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Comfortaa', cursive;
+}
